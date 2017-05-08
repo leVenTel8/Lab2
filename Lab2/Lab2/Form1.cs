@@ -31,5 +31,16 @@ namespace Lab2
             this.pERSONALTableAdapter.Fill(this.dataSet1.PERSONAL);
 
         }
+
+        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void Form1_FromClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = MessageBox.Show("Вы хотите закрыть программу?", "Внимание", MessageBoxButtons.YesNo, MessageBoxIcon.Question) !=
+                DialogResult.Yes;
+        }
     }
 }

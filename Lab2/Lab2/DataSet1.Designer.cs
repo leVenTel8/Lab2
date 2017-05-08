@@ -629,6 +629,10 @@ namespace Lab2 {
             
             private global::System.Data.DataColumn columnDEP_CODE;
             
+            private global::System.Data.DataColumn columnCHILD;
+            
+            private global::System.Data.DataColumn columnMARITAL;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public PERSONALDataTable() {
@@ -744,6 +748,22 @@ namespace Lab2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CHILDColumn {
+                get {
+                    return this.columnCHILD;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MARITALColumn {
+                get {
+                    return this.columnMARITAL;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -779,7 +799,7 @@ namespace Lab2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PERSONALRow AddPERSONALRow(int NUM, string LNAME, string FNAME, string SNAME, System.DateTime BDAY, string POST, string ADRES, string PHONE, decimal PAY, DEPARTMENTRow parentDEPARTMENTRowByFK_DEP) {
+            public PERSONALRow AddPERSONALRow(int NUM, string LNAME, string FNAME, string SNAME, System.DateTime BDAY, string POST, string ADRES, string PHONE, decimal PAY, DEPARTMENTRow parentDEPARTMENTRowByFK_DEP, short CHILD, string MARITAL) {
                 PERSONALRow rowPERSONALRow = ((PERSONALRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         NUM,
@@ -791,7 +811,9 @@ namespace Lab2 {
                         ADRES,
                         PHONE,
                         PAY,
-                        null};
+                        null,
+                        CHILD,
+                        MARITAL};
                 if ((parentDEPARTMENTRowByFK_DEP != null)) {
                     columnValuesArray[9] = parentDEPARTMENTRowByFK_DEP[0];
                 }
@@ -834,6 +856,8 @@ namespace Lab2 {
                 this.columnPHONE = base.Columns["PHONE"];
                 this.columnPAY = base.Columns["PAY"];
                 this.columnDEP_CODE = base.Columns["DEP_CODE"];
+                this.columnCHILD = base.Columns["CHILD"];
+                this.columnMARITAL = base.Columns["MARITAL"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -859,6 +883,10 @@ namespace Lab2 {
                 base.Columns.Add(this.columnPAY);
                 this.columnDEP_CODE = new global::System.Data.DataColumn("DEP_CODE", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDEP_CODE);
+                this.columnCHILD = new global::System.Data.DataColumn("CHILD", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCHILD);
+                this.columnMARITAL = new global::System.Data.DataColumn("MARITAL", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMARITAL);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnNUM}, true));
                 this.columnNUM.AllowDBNull = false;
@@ -869,6 +897,7 @@ namespace Lab2 {
                 this.columnPOST.MaxLength = 50;
                 this.columnADRES.MaxLength = 200;
                 this.columnPHONE.MaxLength = 12;
+                this.columnMARITAL.MaxLength = 20;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1259,6 +1288,38 @@ namespace Lab2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public short CHILD {
+                get {
+                    try {
+                        return ((short)(this[this.tablePERSONAL.CHILDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CHILD\' in table \'PERSONAL\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePERSONAL.CHILDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string MARITAL {
+                get {
+                    try {
+                        return ((string)(this[this.tablePERSONAL.MARITALColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MARITAL\' in table \'PERSONAL\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePERSONAL.MARITALColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public DEPARTMENTRow DEPARTMENTRow {
                 get {
                     return ((DEPARTMENTRow)(this.GetParentRow(this.Table.ParentRelations["FK_DEP"])));
@@ -1374,6 +1435,30 @@ namespace Lab2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDEP_CODENull() {
                 this[this.tablePERSONAL.DEP_CODEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCHILDNull() {
+                return this.IsNull(this.tablePERSONAL.CHILDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCHILDNull() {
+                this[this.tablePERSONAL.CHILDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMARITALNull() {
+                return this.IsNull(this.tablePERSONAL.MARITALColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMARITALNull() {
+                this[this.tablePERSONAL.MARITALColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2044,10 +2129,12 @@ namespace Lab2.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("PHONE", "PHONE");
             tableMapping.ColumnMappings.Add("PAY", "PAY");
             tableMapping.ColumnMappings.Add("DEP_CODE", "DEP_CODE");
+            tableMapping.ColumnMappings.Add("CHILD", "CHILD");
+            tableMapping.ColumnMappings.Add("MARITAL", "MARITAL");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""PERSONAL"" WHERE ((""NUM"" = @Original_NUM) AND ((@IsNull_LNAME = 1 AND ""LNAME"" IS NULL) OR (""LNAME"" = @Original_LNAME)) AND ((@IsNull_FNAME = 1 AND ""FNAME"" IS NULL) OR (""FNAME"" = @Original_FNAME)) AND ((@IsNull_SNAME = 1 AND ""SNAME"" IS NULL) OR (""SNAME"" = @Original_SNAME)) AND ((@IsNull_BDAY = 1 AND ""BDAY"" IS NULL) OR (""BDAY"" = @Original_BDAY)) AND ((@IsNull_POST = 1 AND ""POST"" IS NULL) OR (""POST"" = @Original_POST)) AND ((@IsNull_ADRES = 1 AND ""ADRES"" IS NULL) OR (""ADRES"" = @Original_ADRES)) AND ((@IsNull_PHONE = 1 AND ""PHONE"" IS NULL) OR (""PHONE"" = @Original_PHONE)) AND ((@IsNull_PAY = 1 AND ""PAY"" IS NULL) OR (""PAY"" = @Original_PAY)) AND ((@IsNull_DEP_CODE = 1 AND ""DEP_CODE"" IS NULL) OR (""DEP_CODE"" = @Original_DEP_CODE)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""PERSONAL"" WHERE ((""NUM"" = @Original_NUM) AND ((@IsNull_LNAME = 1 AND ""LNAME"" IS NULL) OR (""LNAME"" = @Original_LNAME)) AND ((@IsNull_FNAME = 1 AND ""FNAME"" IS NULL) OR (""FNAME"" = @Original_FNAME)) AND ((@IsNull_SNAME = 1 AND ""SNAME"" IS NULL) OR (""SNAME"" = @Original_SNAME)) AND ((@IsNull_BDAY = 1 AND ""BDAY"" IS NULL) OR (""BDAY"" = @Original_BDAY)) AND ((@IsNull_POST = 1 AND ""POST"" IS NULL) OR (""POST"" = @Original_POST)) AND ((@IsNull_ADRES = 1 AND ""ADRES"" IS NULL) OR (""ADRES"" = @Original_ADRES)) AND ((@IsNull_PHONE = 1 AND ""PHONE"" IS NULL) OR (""PHONE"" = @Original_PHONE)) AND ((@IsNull_PAY = 1 AND ""PAY"" IS NULL) OR (""PAY"" = @Original_PAY)) AND ((@IsNull_DEP_CODE = 1 AND ""DEP_CODE"" IS NULL) OR (""DEP_CODE"" = @Original_DEP_CODE)) AND ((@IsNull_CHILD = 1 AND ""CHILD"" IS NULL) OR (""CHILD"" = @Original_CHILD)) AND ((@IsNull_MARITAL = 1 AND ""MARITAL"" IS NULL) OR (""MARITAL"" = @Original_MARITAL)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::FirebirdSql.Data.FirebirdClient.FbParameter param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@Original_NUM";
@@ -2204,11 +2291,44 @@ namespace Lab2.DataSet1TableAdapters {
             param.SourceColumn = "DEP_CODE";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@IsNull_CHILD";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.Size = 2;
+            param.IsNullable = true;
+            param.SourceColumn = "CHILD";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@Original_CHILD";
+            param.DbType = global::System.Data.DbType.Int16;
+            param.Size = 2;
+            param.IsNullable = true;
+            param.SourceColumn = "CHILD";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@IsNull_MARITAL";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.Size = 20;
+            param.IsNullable = true;
+            param.SourceColumn = "MARITAL";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@Original_MARITAL";
+            param.Size = 20;
+            param.IsNullable = true;
+            param.SourceColumn = "MARITAL";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO \"PERSONAL\" (\"NUM\", \"LNAME\", \"FNAME\", \"SNAME\", \"BDAY\", \"POST\", \"ADRES\"" +
-                ", \"PHONE\", \"PAY\", \"DEP_CODE\") VALUES (@NUM, @LNAME, @FNAME, @SNAME, @BDAY, @POST" +
-                ", @ADRES, @PHONE, @PAY, @DEP_CODE)";
+                ", \"PHONE\", \"PAY\", \"DEP_CODE\", \"CHILD\", \"MARITAL\") VALUES (@NUM, @LNAME, @FNAME, " +
+                "@SNAME, @BDAY, @POST, @ADRES, @PHONE, @PAY, @DEP_CODE, @CHILD, @MARITAL)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@NUM";
@@ -2274,9 +2394,22 @@ namespace Lab2.DataSet1TableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "DEP_CODE";
             this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@CHILD";
+            param.DbType = global::System.Data.DbType.Int16;
+            param.Size = 2;
+            param.IsNullable = true;
+            param.SourceColumn = "CHILD";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@MARITAL";
+            param.Size = 20;
+            param.IsNullable = true;
+            param.SourceColumn = "MARITAL";
+            this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE ""PERSONAL"" SET ""NUM"" = @NUM, ""LNAME"" = @LNAME, ""FNAME"" = @FNAME, ""SNAME"" = @SNAME, ""BDAY"" = @BDAY, ""POST"" = @POST, ""ADRES"" = @ADRES, ""PHONE"" = @PHONE, ""PAY"" = @PAY, ""DEP_CODE"" = @DEP_CODE WHERE ((""NUM"" = @Original_NUM) AND ((@IsNull_LNAME = 1 AND ""LNAME"" IS NULL) OR (""LNAME"" = @Original_LNAME)) AND ((@IsNull_FNAME = 1 AND ""FNAME"" IS NULL) OR (""FNAME"" = @Original_FNAME)) AND ((@IsNull_SNAME = 1 AND ""SNAME"" IS NULL) OR (""SNAME"" = @Original_SNAME)) AND ((@IsNull_BDAY = 1 AND ""BDAY"" IS NULL) OR (""BDAY"" = @Original_BDAY)) AND ((@IsNull_POST = 1 AND ""POST"" IS NULL) OR (""POST"" = @Original_POST)) AND ((@IsNull_ADRES = 1 AND ""ADRES"" IS NULL) OR (""ADRES"" = @Original_ADRES)) AND ((@IsNull_PHONE = 1 AND ""PHONE"" IS NULL) OR (""PHONE"" = @Original_PHONE)) AND ((@IsNull_PAY = 1 AND ""PAY"" IS NULL) OR (""PAY"" = @Original_PAY)) AND ((@IsNull_DEP_CODE = 1 AND ""DEP_CODE"" IS NULL) OR (""DEP_CODE"" = @Original_DEP_CODE)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE ""PERSONAL"" SET ""NUM"" = @NUM, ""LNAME"" = @LNAME, ""FNAME"" = @FNAME, ""SNAME"" = @SNAME, ""BDAY"" = @BDAY, ""POST"" = @POST, ""ADRES"" = @ADRES, ""PHONE"" = @PHONE, ""PAY"" = @PAY, ""DEP_CODE"" = @DEP_CODE, ""CHILD"" = @CHILD, ""MARITAL"" = @MARITAL WHERE ((""NUM"" = @Original_NUM) AND ((@IsNull_LNAME = 1 AND ""LNAME"" IS NULL) OR (""LNAME"" = @Original_LNAME)) AND ((@IsNull_FNAME = 1 AND ""FNAME"" IS NULL) OR (""FNAME"" = @Original_FNAME)) AND ((@IsNull_SNAME = 1 AND ""SNAME"" IS NULL) OR (""SNAME"" = @Original_SNAME)) AND ((@IsNull_BDAY = 1 AND ""BDAY"" IS NULL) OR (""BDAY"" = @Original_BDAY)) AND ((@IsNull_POST = 1 AND ""POST"" IS NULL) OR (""POST"" = @Original_POST)) AND ((@IsNull_ADRES = 1 AND ""ADRES"" IS NULL) OR (""ADRES"" = @Original_ADRES)) AND ((@IsNull_PHONE = 1 AND ""PHONE"" IS NULL) OR (""PHONE"" = @Original_PHONE)) AND ((@IsNull_PAY = 1 AND ""PAY"" IS NULL) OR (""PAY"" = @Original_PAY)) AND ((@IsNull_DEP_CODE = 1 AND ""DEP_CODE"" IS NULL) OR (""DEP_CODE"" = @Original_DEP_CODE)) AND ((@IsNull_CHILD = 1 AND ""CHILD"" IS NULL) OR (""CHILD"" = @Original_CHILD)) AND ((@IsNull_MARITAL = 1 AND ""MARITAL"" IS NULL) OR (""MARITAL"" = @Original_MARITAL)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@NUM";
@@ -2341,6 +2474,19 @@ namespace Lab2.DataSet1TableAdapters {
             param.Size = 4;
             param.IsNullable = true;
             param.SourceColumn = "DEP_CODE";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@CHILD";
+            param.DbType = global::System.Data.DbType.Int16;
+            param.Size = 2;
+            param.IsNullable = true;
+            param.SourceColumn = "CHILD";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@MARITAL";
+            param.Size = 20;
+            param.IsNullable = true;
+            param.SourceColumn = "MARITAL";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@Original_NUM";
@@ -2497,6 +2643,39 @@ namespace Lab2.DataSet1TableAdapters {
             param.SourceColumn = "DEP_CODE";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@IsNull_CHILD";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.Size = 2;
+            param.IsNullable = true;
+            param.SourceColumn = "CHILD";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@Original_CHILD";
+            param.DbType = global::System.Data.DbType.Int16;
+            param.Size = 2;
+            param.IsNullable = true;
+            param.SourceColumn = "CHILD";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@IsNull_MARITAL";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.Size = 20;
+            param.IsNullable = true;
+            param.SourceColumn = "MARITAL";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@Original_MARITAL";
+            param.Size = 20;
+            param.IsNullable = true;
+            param.SourceColumn = "MARITAL";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2512,8 +2691,8 @@ namespace Lab2.DataSet1TableAdapters {
             this._commandCollection = new global::FirebirdSql.Data.FirebirdClient.FbCommand[1];
             this._commandCollection[0] = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT \"NUM\", \"LNAME\", \"FNAME\", \"SNAME\", \"BDAY\", \"POST\", \"ADRES\", \"PHONE\", \"PAY\"," +
-                " \"DEP_CODE\" FROM \"PERSONAL\"";
+            this._commandCollection[0].CommandText = "SELECT NUM, LNAME, FNAME, SNAME, BDAY, POST, ADRES, PHONE, PAY, DEP_CODE, CHILD, " +
+                "MARITAL FROM PERSONAL";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2574,7 +2753,7 @@ namespace Lab2.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_NUM, string Original_LNAME, string Original_FNAME, string Original_SNAME, global::System.Nullable<global::System.DateTime> Original_BDAY, string Original_POST, string Original_ADRES, string Original_PHONE, global::System.Nullable<decimal> Original_PAY, global::System.Nullable<int> Original_DEP_CODE) {
+        public virtual int Delete(int Original_NUM, string Original_LNAME, string Original_FNAME, string Original_SNAME, global::System.Nullable<global::System.DateTime> Original_BDAY, string Original_POST, string Original_ADRES, string Original_PHONE, global::System.Nullable<decimal> Original_PAY, global::System.Nullable<int> Original_DEP_CODE, global::System.Nullable<short> Original_CHILD, string Original_MARITAL) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_NUM));
             if ((Original_LNAME == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -2648,6 +2827,22 @@ namespace Lab2.DataSet1TableAdapters {
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
+            if ((Original_CHILD.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((short)(Original_CHILD.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            if ((Original_MARITAL == null)) {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((string)(Original_MARITAL));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2668,7 +2863,7 @@ namespace Lab2.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int NUM, string LNAME, string FNAME, string SNAME, global::System.Nullable<global::System.DateTime> BDAY, string POST, string ADRES, string PHONE, global::System.Nullable<decimal> PAY, global::System.Nullable<int> DEP_CODE) {
+        public virtual int Insert(int NUM, string LNAME, string FNAME, string SNAME, global::System.Nullable<global::System.DateTime> BDAY, string POST, string ADRES, string PHONE, global::System.Nullable<decimal> PAY, global::System.Nullable<int> DEP_CODE, global::System.Nullable<short> CHILD, string MARITAL) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(NUM));
             if ((LNAME == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -2724,6 +2919,18 @@ namespace Lab2.DataSet1TableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
+            if ((CHILD.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((short)(CHILD.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((MARITAL == null)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(MARITAL));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2755,6 +2962,8 @@ namespace Lab2.DataSet1TableAdapters {
                     string PHONE, 
                     global::System.Nullable<decimal> PAY, 
                     global::System.Nullable<int> DEP_CODE, 
+                    global::System.Nullable<short> CHILD, 
+                    string MARITAL, 
                     int Original_NUM, 
                     string Original_LNAME, 
                     string Original_FNAME, 
@@ -2764,7 +2973,9 @@ namespace Lab2.DataSet1TableAdapters {
                     string Original_ADRES, 
                     string Original_PHONE, 
                     global::System.Nullable<decimal> Original_PAY, 
-                    global::System.Nullable<int> Original_DEP_CODE) {
+                    global::System.Nullable<int> Original_DEP_CODE, 
+                    global::System.Nullable<short> Original_CHILD, 
+                    string Original_MARITAL) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(NUM));
             if ((LNAME == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -2820,78 +3031,106 @@ namespace Lab2.DataSet1TableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_NUM));
-            if ((Original_LNAME == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            if ((CHILD.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((short)(CHILD.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_LNAME));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((Original_FNAME == null)) {
+            if ((MARITAL == null)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(MARITAL));
+            }
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_NUM));
+            if ((Original_LNAME == null)) {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_FNAME));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_LNAME));
             }
-            if ((Original_SNAME == null)) {
+            if ((Original_FNAME == null)) {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_SNAME));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_FNAME));
             }
-            if ((Original_BDAY.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((System.DateTime)(Original_BDAY.Value));
-            }
-            else {
+            if ((Original_SNAME == null)) {
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
-            if ((Original_POST == null)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_SNAME));
+            }
+            if ((Original_BDAY.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((System.DateTime)(Original_BDAY.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_POST));
-            }
-            if ((Original_ADRES == null)) {
+            if ((Original_POST == null)) {
                 this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_ADRES));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_POST));
             }
-            if ((Original_PHONE == null)) {
+            if ((Original_ADRES == null)) {
                 this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_PHONE));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_ADRES));
             }
-            if ((Original_PAY.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((decimal)(Original_PAY.Value));
-            }
-            else {
+            if ((Original_PHONE == null)) {
                 this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
-            if ((Original_DEP_CODE.HasValue == true)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_PHONE));
+            }
+            if ((Original_PAY.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((int)(Original_DEP_CODE.Value));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((decimal)(Original_PAY.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            if ((Original_DEP_CODE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((int)(Original_DEP_CODE.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
+            }
+            if ((Original_CHILD.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((short)(Original_CHILD.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
+            }
+            if ((Original_MARITAL == null)) {
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_MARITAL));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2923,6 +3162,8 @@ namespace Lab2.DataSet1TableAdapters {
                     string PHONE, 
                     global::System.Nullable<decimal> PAY, 
                     global::System.Nullable<int> DEP_CODE, 
+                    global::System.Nullable<short> CHILD, 
+                    string MARITAL, 
                     int Original_NUM, 
                     string Original_LNAME, 
                     string Original_FNAME, 
@@ -2932,8 +3173,10 @@ namespace Lab2.DataSet1TableAdapters {
                     string Original_ADRES, 
                     string Original_PHONE, 
                     global::System.Nullable<decimal> Original_PAY, 
-                    global::System.Nullable<int> Original_DEP_CODE) {
-            return this.Update(Original_NUM, LNAME, FNAME, SNAME, BDAY, POST, ADRES, PHONE, PAY, DEP_CODE, Original_NUM, Original_LNAME, Original_FNAME, Original_SNAME, Original_BDAY, Original_POST, Original_ADRES, Original_PHONE, Original_PAY, Original_DEP_CODE);
+                    global::System.Nullable<int> Original_DEP_CODE, 
+                    global::System.Nullable<short> Original_CHILD, 
+                    string Original_MARITAL) {
+            return this.Update(Original_NUM, LNAME, FNAME, SNAME, BDAY, POST, ADRES, PHONE, PAY, DEP_CODE, CHILD, MARITAL, Original_NUM, Original_LNAME, Original_FNAME, Original_SNAME, Original_BDAY, Original_POST, Original_ADRES, Original_PHONE, Original_PAY, Original_DEP_CODE, Original_CHILD, Original_MARITAL);
         }
     }
     
