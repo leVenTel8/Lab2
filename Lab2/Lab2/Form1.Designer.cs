@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             System.Windows.Forms.Label nUMLabel;
             System.Windows.Forms.Label lNAMELabel;
             System.Windows.Forms.Label fNAMELabel;
@@ -39,6 +38,8 @@
             System.Windows.Forms.Label aDRESLabel;
             System.Windows.Forms.Label pHONELabel;
             System.Windows.Forms.Label pAYLabel;
+            System.Windows.Forms.Label mARITALLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.dataSet1 = new Lab2.DataSet1();
             this.pERSONALBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pERSONALTableAdapter = new Lab2.DataSet1TableAdapters.PERSONALTableAdapter();
@@ -74,6 +75,13 @@
             this.aDRESTextBox = new System.Windows.Forms.TextBox();
             this.pHONETextBox = new System.Windows.Forms.TextBox();
             this.pAYTextBox = new System.Windows.Forms.TextBox();
+            this.mARITALComboBox = new System.Windows.Forms.ComboBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dEPARTMENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dEPARTMENTTableAdapter = new Lab2.DataSet1TableAdapters.DEPARTMENTTableAdapter();
             nUMLabel = new System.Windows.Forms.Label();
             lNAMELabel = new System.Windows.Forms.Label();
             fNAMELabel = new System.Windows.Forms.Label();
@@ -83,13 +91,105 @@
             aDRESLabel = new System.Windows.Forms.Label();
             pHONELabel = new System.Windows.Forms.Label();
             pAYLabel = new System.Windows.Forms.Label();
+            mARITALLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pERSONALBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pERSONALBindingNavigator)).BeginInit();
             this.pERSONALBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pERSONALDataGridView)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dEPARTMENTBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // nUMLabel
+            // 
+            nUMLabel.AutoSize = true;
+            nUMLabel.Location = new System.Drawing.Point(306, 88);
+            nUMLabel.Name = "nUMLabel";
+            nUMLabel.Size = new System.Drawing.Size(44, 13);
+            nUMLabel.TabIndex = 3;
+            nUMLabel.Text = "Номер:";
+            // 
+            // lNAMELabel
+            // 
+            lNAMELabel.AutoSize = true;
+            lNAMELabel.Location = new System.Drawing.Point(306, 114);
+            lNAMELabel.Name = "lNAMELabel";
+            lNAMELabel.Size = new System.Drawing.Size(59, 13);
+            lNAMELabel.TabIndex = 5;
+            lNAMELabel.Text = "Фамилия:";
+            // 
+            // fNAMELabel
+            // 
+            fNAMELabel.AutoSize = true;
+            fNAMELabel.Location = new System.Drawing.Point(306, 143);
+            fNAMELabel.Name = "fNAMELabel";
+            fNAMELabel.Size = new System.Drawing.Size(32, 13);
+            fNAMELabel.TabIndex = 7;
+            fNAMELabel.Text = "Имя:";
+            // 
+            // sNAMELabel
+            // 
+            sNAMELabel.AutoSize = true;
+            sNAMELabel.Location = new System.Drawing.Point(306, 173);
+            sNAMELabel.Name = "sNAMELabel";
+            sNAMELabel.Size = new System.Drawing.Size(57, 13);
+            sNAMELabel.TabIndex = 9;
+            sNAMELabel.Text = "Отчество:";
+            // 
+            // bDAYLabel
+            // 
+            bDAYLabel.AutoSize = true;
+            bDAYLabel.Location = new System.Drawing.Point(306, 198);
+            bDAYLabel.Name = "bDAYLabel";
+            bDAYLabel.Size = new System.Drawing.Size(89, 13);
+            bDAYLabel.TabIndex = 11;
+            bDAYLabel.Text = "Дата рождения:";
+            // 
+            // pOSTLabel
+            // 
+            pOSTLabel.AutoSize = true;
+            pOSTLabel.Location = new System.Drawing.Point(306, 221);
+            pOSTLabel.Name = "pOSTLabel";
+            pOSTLabel.Size = new System.Drawing.Size(68, 13);
+            pOSTLabel.TabIndex = 13;
+            pOSTLabel.Text = "Должность:";
+            // 
+            // aDRESLabel
+            // 
+            aDRESLabel.AutoSize = true;
+            aDRESLabel.Location = new System.Drawing.Point(306, 247);
+            aDRESLabel.Name = "aDRESLabel";
+            aDRESLabel.Size = new System.Drawing.Size(41, 13);
+            aDRESLabel.TabIndex = 15;
+            aDRESLabel.Text = "Адрес:";
+            // 
+            // pHONELabel
+            // 
+            pHONELabel.AutoSize = true;
+            pHONELabel.Location = new System.Drawing.Point(306, 323);
+            pHONELabel.Name = "pHONELabel";
+            pHONELabel.Size = new System.Drawing.Size(55, 13);
+            pHONELabel.TabIndex = 17;
+            pHONELabel.Text = "Телефон:";
+            // 
+            // pAYLabel
+            // 
+            pAYLabel.AutoSize = true;
+            pAYLabel.Location = new System.Drawing.Point(307, 349);
+            pAYLabel.Name = "pAYLabel";
+            pAYLabel.Size = new System.Drawing.Size(42, 13);
+            pAYLabel.TabIndex = 19;
+            pAYLabel.Text = "Оклад:";
+            // 
+            // mARITALLabel
+            // 
+            mARITALLabel.AutoSize = true;
+            mARITALLabel.Location = new System.Drawing.Point(306, 391);
+            mARITALLabel.Name = "mARITALLabel";
+            mARITALLabel.Size = new System.Drawing.Size(66, 13);
+            mARITALLabel.TabIndex = 21;
+            mARITALLabel.Text = "положение:";
             // 
             // dataSet1
             // 
@@ -117,6 +217,7 @@
             this.pERSONALBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
             this.pERSONALBindingNavigator.BindingSource = this.pERSONALBindingSource;
             this.pERSONALBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.pERSONALBindingNavigator.CountItemFormat = "из {0}";
             this.pERSONALBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
             this.pERSONALBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
@@ -150,12 +251,13 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Add new";
+            this.bindingNavigatorAddNewItem.ToolTipText = "Добавить новую запись";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(36, 22);
+            this.bindingNavigatorCountItem.Text = "из {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
             // bindingNavigatorDeleteItem
@@ -166,6 +268,7 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.ToolTipText = "Удалить выбранную запись";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -234,6 +337,7 @@
             this.pERSONALBindingNavigatorSaveItem.Name = "pERSONALBindingNavigatorSaveItem";
             this.pERSONALBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.pERSONALBindingNavigatorSaveItem.Text = "Save Data";
+            this.pERSONALBindingNavigatorSaveItem.ToolTipText = "Сохранить изменения";
             this.pERSONALBindingNavigatorSaveItem.Click += new System.EventHandler(this.pERSONALBindingNavigatorSaveItem_Click);
             // 
             // pERSONALDataGridView
@@ -292,8 +396,9 @@
             // отделыToolStripMenuItem
             // 
             this.отделыToolStripMenuItem.Name = "отделыToolStripMenuItem";
-            this.отделыToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.отделыToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.отделыToolStripMenuItem.Text = "Отделы";
+            this.отделыToolStripMenuItem.Click += new System.EventHandler(this.отделыToolStripMenuItem_Click);
             // 
             // должностиToolStripMenuItem
             // 
@@ -314,15 +419,6 @@
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
-            // nUMLabel
-            // 
-            nUMLabel.AutoSize = true;
-            nUMLabel.Location = new System.Drawing.Point(336, 91);
-            nUMLabel.Name = "nUMLabel";
-            nUMLabel.Size = new System.Drawing.Size(35, 13);
-            nUMLabel.TabIndex = 3;
-            nUMLabel.Text = "NUM:";
-            // 
             // nUMTextBox
             // 
             this.nUMTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONALBindingSource, "NUM", true));
@@ -330,15 +426,6 @@
             this.nUMTextBox.Name = "nUMTextBox";
             this.nUMTextBox.Size = new System.Drawing.Size(200, 20);
             this.nUMTextBox.TabIndex = 4;
-            // 
-            // lNAMELabel
-            // 
-            lNAMELabel.AutoSize = true;
-            lNAMELabel.Location = new System.Drawing.Point(336, 117);
-            lNAMELabel.Name = "lNAMELabel";
-            lNAMELabel.Size = new System.Drawing.Size(47, 13);
-            lNAMELabel.TabIndex = 5;
-            lNAMELabel.Text = "LNAME:";
             // 
             // lNAMETextBox
             // 
@@ -348,15 +435,6 @@
             this.lNAMETextBox.Size = new System.Drawing.Size(200, 20);
             this.lNAMETextBox.TabIndex = 6;
             // 
-            // fNAMELabel
-            // 
-            fNAMELabel.AutoSize = true;
-            fNAMELabel.Location = new System.Drawing.Point(336, 143);
-            fNAMELabel.Name = "fNAMELabel";
-            fNAMELabel.Size = new System.Drawing.Size(47, 13);
-            fNAMELabel.TabIndex = 7;
-            fNAMELabel.Text = "FNAME:";
-            // 
             // fNAMETextBox
             // 
             this.fNAMETextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONALBindingSource, "FNAME", true));
@@ -364,15 +442,6 @@
             this.fNAMETextBox.Name = "fNAMETextBox";
             this.fNAMETextBox.Size = new System.Drawing.Size(200, 20);
             this.fNAMETextBox.TabIndex = 8;
-            // 
-            // sNAMELabel
-            // 
-            sNAMELabel.AutoSize = true;
-            sNAMELabel.Location = new System.Drawing.Point(336, 169);
-            sNAMELabel.Name = "sNAMELabel";
-            sNAMELabel.Size = new System.Drawing.Size(48, 13);
-            sNAMELabel.TabIndex = 9;
-            sNAMELabel.Text = "SNAME:";
             // 
             // sNAMETextBox
             // 
@@ -382,15 +451,6 @@
             this.sNAMETextBox.Size = new System.Drawing.Size(200, 20);
             this.sNAMETextBox.TabIndex = 10;
             // 
-            // bDAYLabel
-            // 
-            bDAYLabel.AutoSize = true;
-            bDAYLabel.Location = new System.Drawing.Point(336, 196);
-            bDAYLabel.Name = "bDAYLabel";
-            bDAYLabel.Size = new System.Drawing.Size(39, 13);
-            bDAYLabel.TabIndex = 11;
-            bDAYLabel.Text = "BDAY:";
-            // 
             // bDAYDateTimePicker
             // 
             this.bDAYDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.pERSONALBindingSource, "BDAY", true));
@@ -398,15 +458,6 @@
             this.bDAYDateTimePicker.Name = "bDAYDateTimePicker";
             this.bDAYDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.bDAYDateTimePicker.TabIndex = 12;
-            // 
-            // pOSTLabel
-            // 
-            pOSTLabel.AutoSize = true;
-            pOSTLabel.Location = new System.Drawing.Point(336, 221);
-            pOSTLabel.Name = "pOSTLabel";
-            pOSTLabel.Size = new System.Drawing.Size(39, 13);
-            pOSTLabel.TabIndex = 13;
-            pOSTLabel.Text = "POST:";
             // 
             // pOSTTextBox
             // 
@@ -416,62 +467,107 @@
             this.pOSTTextBox.Size = new System.Drawing.Size(200, 20);
             this.pOSTTextBox.TabIndex = 14;
             // 
-            // aDRESLabel
-            // 
-            aDRESLabel.AutoSize = true;
-            aDRESLabel.Location = new System.Drawing.Point(336, 247);
-            aDRESLabel.Name = "aDRESLabel";
-            aDRESLabel.Size = new System.Drawing.Size(47, 13);
-            aDRESLabel.TabIndex = 15;
-            aDRESLabel.Text = "ADRES:";
-            // 
             // aDRESTextBox
             // 
             this.aDRESTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONALBindingSource, "ADRES", true));
-            this.aDRESTextBox.Location = new System.Drawing.Point(407, 244);
+            this.aDRESTextBox.Location = new System.Drawing.Point(407, 247);
+            this.aDRESTextBox.Multiline = true;
             this.aDRESTextBox.Name = "aDRESTextBox";
-            this.aDRESTextBox.Size = new System.Drawing.Size(200, 20);
+            this.aDRESTextBox.Size = new System.Drawing.Size(200, 67);
             this.aDRESTextBox.TabIndex = 16;
-            // 
-            // pHONELabel
-            // 
-            pHONELabel.AutoSize = true;
-            pHONELabel.Location = new System.Drawing.Point(336, 273);
-            pHONELabel.Name = "pHONELabel";
-            pHONELabel.Size = new System.Drawing.Size(48, 13);
-            pHONELabel.TabIndex = 17;
-            pHONELabel.Text = "PHONE:";
             // 
             // pHONETextBox
             // 
             this.pHONETextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONALBindingSource, "PHONE", true));
-            this.pHONETextBox.Location = new System.Drawing.Point(407, 270);
+            this.pHONETextBox.Location = new System.Drawing.Point(407, 320);
             this.pHONETextBox.Name = "pHONETextBox";
             this.pHONETextBox.Size = new System.Drawing.Size(200, 20);
             this.pHONETextBox.TabIndex = 18;
             // 
-            // pAYLabel
-            // 
-            pAYLabel.AutoSize = true;
-            pAYLabel.Location = new System.Drawing.Point(336, 299);
-            pAYLabel.Name = "pAYLabel";
-            pAYLabel.Size = new System.Drawing.Size(31, 13);
-            pAYLabel.TabIndex = 19;
-            pAYLabel.Text = "PAY:";
-            // 
             // pAYTextBox
             // 
             this.pAYTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONALBindingSource, "PAY", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
-            this.pAYTextBox.Location = new System.Drawing.Point(407, 296);
+            this.pAYTextBox.Location = new System.Drawing.Point(407, 346);
             this.pAYTextBox.Name = "pAYTextBox";
             this.pAYTextBox.Size = new System.Drawing.Size(200, 20);
             this.pAYTextBox.TabIndex = 20;
+            // 
+            // mARITALComboBox
+            // 
+            this.mARITALComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pERSONALBindingSource, "MARITAL", true));
+            this.mARITALComboBox.FormattingEnabled = true;
+            this.mARITALComboBox.Items.AddRange(new object[] {
+            "женат",
+            "замужем",
+            "не женат",
+            "не замужем"});
+            this.mARITALComboBox.Location = new System.Drawing.Point(407, 388);
+            this.mARITALComboBox.Name = "mARITALComboBox";
+            this.mARITALComboBox.Size = new System.Drawing.Size(121, 21);
+            this.mARITALComboBox.TabIndex = 22;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.pERSONALBindingSource, "CHILD", true));
+            this.checkBox1.Location = new System.Drawing.Point(407, 415);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(80, 17);
+            this.checkBox1.TabIndex = 23;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(307, 415);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 13);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "Есть дети:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(306, 378);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Семейное";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.pERSONALBindingSource, "DEP_CODE", true));
+            this.comboBox1.DataSource = this.dEPARTMENTBindingSource;
+            this.comboBox1.DisplayMember = "NAME";
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(407, 453);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 26;
+            this.comboBox1.ValueMember = "ID";
+            // 
+            // dEPARTMENTBindingSource
+            // 
+            this.dEPARTMENTBindingSource.DataMember = "DEPARTMENT";
+            this.dEPARTMENTBindingSource.DataSource = this.dataSet1;
+            // 
+            // dEPARTMENTTableAdapter
+            // 
+            this.dEPARTMENTTableAdapter.ClearBeforeFill = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(794, 507);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(mARITALLabel);
+            this.Controls.Add(this.mARITALComboBox);
             this.Controls.Add(nUMLabel);
             this.Controls.Add(this.nUMTextBox);
             this.Controls.Add(lNAMELabel);
@@ -506,6 +602,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pERSONALDataGridView)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dEPARTMENTBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -548,6 +645,13 @@
         private System.Windows.Forms.TextBox aDRESTextBox;
         private System.Windows.Forms.TextBox pHONETextBox;
         private System.Windows.Forms.TextBox pAYTextBox;
+        private System.Windows.Forms.ComboBox mARITALComboBox;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.BindingSource dEPARTMENTBindingSource;
+        private DataSet1TableAdapters.DEPARTMENTTableAdapter dEPARTMENTTableAdapter;
     }
 }
 

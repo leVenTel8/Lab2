@@ -27,6 +27,8 @@ namespace Lab2
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dataSet1.DEPARTMENT' table. You can move, or remove it, as needed.
+            this.dEPARTMENTTableAdapter.Fill(this.dataSet1.DEPARTMENT);
             // TODO: This line of code loads data into the 'dataSet1.PERSONAL' table. You can move, or remove it, as needed.
             this.pERSONALTableAdapter.Fill(this.dataSet1.PERSONAL);
 
@@ -41,6 +43,21 @@ namespace Lab2
         {
             e.Cancel = MessageBox.Show("Вы хотите закрыть программу?", "Внимание", MessageBoxButtons.YesNo, MessageBoxIcon.Question) !=
                 DialogResult.Yes;
+        }
+
+        private void отделыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 frm = new Form2();
+
+            frm.ShowDialog();
+
+            //Читаем данные из таблицы Department БД в набор dataset1 главной формы
+            this.dEPARTMENTTableAdapter.Fill(this.dataSet1.DEPARTMENT);
+
+            //Обновляем все элементы интерфейса, отображающие данные ( для отображения на основном 
+            //экране всех изменений, которые мысделали в окне справочника)
+            dEPARTMENTBindingSource.ResetBindings(false);
+            pERSONALBindingSource.ResetBindings(false);
         }
     }
 }
